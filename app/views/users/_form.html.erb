@@ -1,0 +1,50 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+   <div class="form-group">
+    <%= f.label :firstname %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :firstname, required: true %>
+  </div>
+   <div class="form-group">
+    <%= f.label :lastname %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :lastname, required: true %>
+  </div>
+   <div class="form-group">
+    <%= f.label :email %>
+  </div>
+  <div class="form-group">
+    <%= f.email_field :email, required: true %>
+  </div>
+   <div class="form-group">
+    <%= f.label :username %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :username, required: true %>
+  </div>
+   <div class="form-group">
+    <%= f.label :password %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, required: true %>
+  </div>
+  <div class="form-group actions">
+    <%= f.submit %>
+  </div>
+<% end %>
