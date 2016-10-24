@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   use_doorkeeper
-  get "index", to: "sessions#index"
-  get "logout", to: "sessions#logout"
-  post "login", to: "sessions#login"
+  get "/auth/login", to: "sessions#index"
+  get "/auth/logout", to: "sessions#logout"
+  post "/auth/login", to: "sessions#login"
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

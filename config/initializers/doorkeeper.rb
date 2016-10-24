@@ -6,9 +6,10 @@ Doorkeeper.configure do
   resource_owner_authenticator do
     # Put your resource owner authentication logic here.
     # Example implementation:
-    User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
+    session[:return_route] = request.fullpath
+    User.find_by(id: session[:user_id]) || redirect_to(login_path)
   end
-
+  access_token_generator "Doorkeeper::JWT"
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
   # admin_authenticator do
   #   # Put your admin authentication logic here.
@@ -108,4 +109,42 @@ Doorkeeper.configure do
 
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
+end
+
+Doorkeeper::JWT.configure do
+  # Set the payload for the JWT token. This should contain unique information
+  # about the user.
+  # Defaults to a randomly generated token in a hash
+  # { token: "RANDOM-TOKEN" }
+  token_payload do |opts|
+    user = User.find(opts[:resource_owner_id])
+
+    {
+      key: rand(1000),
+      user: {
+        id: user.id,
+        email: user.email
+      }
+    }
+  end
+
+  # Use the application secret specified in the Access Grant token
+  # Defaults to false
+  # If you specify `use_application_secret true`, both secret_key and secret_key_path will be ignored
+  # use_application_secret false
+
+  # Set the encryption secret. This would be shared with any other applications
+  # that should be able to read the payload of the token.
+  # Defaults to "secret"
+  secret_key "MY-SECRET"
+
+  # If you want to use RS* encoding specify the path to the RSA key
+  # to use for signing.
+  # If you specify a secret_key_path it will be used instead of secret_key
+  # secret_key_path "path/to/file.pem"
+
+  # Specify encryption type. Supports any algorithim in
+  # https://github.com/progrium/ruby-jwt
+  # defaults to nil
+  encryption_method :hs512
 end
