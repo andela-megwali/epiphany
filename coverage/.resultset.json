@@ -486,6 +486,8 @@
       "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/models/item.rb": [
         1,
         1,
+        null,
+        1,
         null
       ],
       "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/models/user.rb": [
@@ -496,6 +498,6 @@
         null
       ]
     },
-    "timestamp": 1477342964
+    "timestamp": 1477343252
   }
 }
