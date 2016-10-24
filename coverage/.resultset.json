@@ -281,8 +281,12 @@
         1,
         null,
         1,
+        null,
         1,
         1,
+        1,
+        1,
+        null,
         1,
         null,
         null,
@@ -348,6 +352,10 @@
         1,
         null
       ],
+      "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/helpers/user_helper.rb": [
+        1,
+        null
+      ],
       "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/helpers/welcome_helper.rb": [
         1,
         null
@@ -368,7 +376,6 @@
         null,
         null,
         null,
-        null,
         1,
         2,
         2,
@@ -380,6 +387,36 @@
         null,
         null,
         1,
+        null
+      ],
+      "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/controllers/welcome_controller.rb": [
@@ -395,6 +432,6 @@
         null
       ]
     },
-    "timestamp": 1477322242
+    "timestamp": 1477326697
   }
 }

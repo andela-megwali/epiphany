@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe UserController, type: :controller do
+RSpec.describe UsersController, type: :controller do
 
-  describe "GET #sign_up" do
+  describe "GET #new" do
     it "returns http success" do
-      get :sign_up
+      get :new
       expect(response).to have_http_status(:success)
     end
   end
