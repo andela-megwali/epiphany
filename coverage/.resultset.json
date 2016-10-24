@@ -475,13 +475,29 @@
         null,
         null
       ],
+      "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/models/bucketlist.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/models/item.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/andela/Desktop/mic/checkpoints/bucketlist/epiphany/app/models/user.rb": [
+        1,
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1477340204
+    "timestamp": 1477343252
   }
 }
