@@ -6,10 +6,14 @@ Rails.application.routes.draw do
   get "/auth/login", to: "sessions#index"
   get "/auth/logout", to: "sessions#logout"
   post "/auth/login", to: "sessions#login"
-
   resources :users
-  resources :bucketlists do
-    resources :items
+  
+  namespace :api do  
+    namespace :v1 do  
+      resources :bucketlists do
+        resources :items
+      end
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

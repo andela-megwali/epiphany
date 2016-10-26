@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe BucketlistsController, type: :controller do
+RSpec.describe Api::V1::BucketlistsController, type: :controller do
   let(:token) { double acceptable?: true }
   before do
     allow(controller).to receive(:doorkeeper_token) { token }

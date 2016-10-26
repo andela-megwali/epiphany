@@ -50,7 +50,9 @@ RSpec.describe SessionsController, type: :controller do
   end
 
   describe "#logout" do
+    let(:token) { double acceptable?: true }
     before do
+      allow(controller).to receive(:doorkeeper_token) { token }
       session[:user_id] = 1
       get :logout
     end
