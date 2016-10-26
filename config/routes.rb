@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "user/sign_up"
 
-  get "welcome/index"
-
   use_doorkeeper
   get "/auth/login", to: "sessions#index"
   get "/auth/logout", to: "sessions#logout"
