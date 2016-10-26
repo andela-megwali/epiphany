@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe SessionsController, type: :controller do
   describe "#index" do
-    before { get :index}
-    it {is_expected.to render_template("index")}
+    before { get :index }
+    it { is_expected.to render_template("index") }
     it "responds with 200" do
       expect(response.status).to eq 200
     end
@@ -15,7 +15,7 @@ RSpec.describe SessionsController, type: :controller do
       post :login, sign_in: attributes_for(:user)
     end
     it { is_expected.to redirect_to root_path }
-    it { is_expected.to respond_with 302}
+    it { is_expected.to respond_with 302 }
     it "sets a session" do
       expect(session[:user_id]).to eq 1
     end
@@ -26,7 +26,7 @@ RSpec.describe SessionsController, type: :controller do
       session[:user_id] = 1
       get :logout
     end
-    it {is_expected.to redirect_to("index")}
+    it { is_expected.to redirect_to("index") }
     it "ends the session" do
       expect(session[:user_id]).to equal(nil)
       expect(response.status).to eq 302

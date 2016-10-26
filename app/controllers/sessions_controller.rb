@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
   def login_route
     if session[:return_route]
       redirect_to session[:return_route]
-    else 
+    else
       redirect_to root_path, notice: "You have successfully signed in"
     end
   end

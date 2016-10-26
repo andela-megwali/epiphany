@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe BucketlistsController, type: :controller do
-  let(:token) { double :acceptable? => true }
+  let(:token) { double acceptable?: true }
   before do
     allow(controller).to receive(:doorkeeper_token) { token }
   end
@@ -30,9 +30,9 @@ RSpec.describe BucketlistsController, type: :controller do
         expect(json_response[:name]).to_not eq "MyBucketlist"
         expect(json_response[:error]).to eq "Bucketlist not created try again"
       end
-    end  
+    end
   end
-  
+
   describe "GET #index" do
     before { create :item }
     it "lists all bucketlists" do
@@ -40,7 +40,7 @@ RSpec.describe BucketlistsController, type: :controller do
       json_response = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(:success)
       expect(json_response.first[:name]).to eq "MyBucketlist"
-      expect(json_response.count).to eq Bucketlist.all.count
+      expect(json_response.count).to eq Bucketlist.count
     end
   end
 
@@ -80,7 +80,7 @@ RSpec.describe BucketlistsController, type: :controller do
         expect(json_response[:name]).to_not eq "MyBucketlist"
         expect(json_response[:error]).to eq "Bucketlist not updated try again"
       end
-    end 
+    end
   end
 
   describe "DELETE #destroy" do

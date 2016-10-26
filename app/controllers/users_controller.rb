@@ -18,14 +18,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    
   end
-  
-  def show 
+
+  def show
   end
 
   def destroy
-    
   end
 
   private
@@ -35,6 +33,12 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :email, :username, :password)
+    params.require(:user).permit(
+      :firstname,
+      :lastname,
+      :email,
+      :username,
+      :password
+    )
   end
 end
