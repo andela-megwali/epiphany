@@ -15,10 +15,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
     
   end
   
-  def show
+  def show 
+  end
+
+  def destroy
     
   end
 

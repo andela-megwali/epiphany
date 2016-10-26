@@ -22,4 +22,23 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "GET #edit" do
+    before { create :user }
+    it "returns http success" do
+      get :edit, id: 1
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template("edit")
+    end
+  end
+
+  # describe "GET #show" do
+  #   before { create :user }
+  #   it "returns http success" do
+  #     get :show, id: 1
+  #     expect(response).to have_http_status(:success)
+  #     expect(response).to render_template("show")
+  #     expect(assigns(:user)).to eq user_path(1)
+  #   end
+  # end
+
 end

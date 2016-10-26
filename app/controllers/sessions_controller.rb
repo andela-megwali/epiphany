@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  # before_action :doorkeeper_authorize!, only: [:logout]
+
   def index
   end
 
