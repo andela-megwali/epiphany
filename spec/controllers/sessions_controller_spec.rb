@@ -23,14 +23,28 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     context "with invalid login details" do
-      before do
-        create :user
-        post :login, sign_in: { username: "smith", password: "qwertyu" }
+      context "when a value is incorrect" do
+        before do
+          create :user
+          post :login, sign_in: { username: "smith", password: "qwertyu" }
+        end
+        it { is_expected.to redirect_to "index" }
+        it { is_expected.to respond_with 302 }
+        it "does not set a session" do
+          expect(session[:user_id]).to eq nil
+        end
       end
-      it { is_expected.to redirect_to "index" }
-      it { is_expected.to respond_with 302 }
-      it "does not set a session" do
-        expect(session[:user_id]).to eq nil
+
+      context "when a value is set to nil" do
+        before do
+          create :user
+          post :login, sign_in: { username: nil, password: "qwertyu" }
+        end
+        it { is_expected.to redirect_to "index" }
+        it { is_expected.to respond_with 302 }
+        it "does not set a session" do
+          expect(session[:user_id]).to eq nil
+        end
       end
     end
   end
