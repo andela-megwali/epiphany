@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ItemsController < ApplicationController
+    class ItemsController < ApiController
       before_action :doorkeeper_authorize!
       before_action :get_bucketlist, except: [:create, :index]
       before_action :set_item, except: [:create, :index]

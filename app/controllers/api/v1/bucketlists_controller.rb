@@ -1,6 +1,6 @@
 module Api
   module V1
-    class BucketlistsController < ApplicationController
+    class BucketlistsController < ApiController
       before_action :doorkeeper_authorize!
       before_action :set_bucketlist, except: [:create, :index]
 
