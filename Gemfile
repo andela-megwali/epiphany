@@ -14,6 +14,8 @@ gem "doorkeeper-jwt"
 gem "puma"
 gem "rack-cors"
 gem "rubocop"
+gem 'active_model_serializers'
+gem "rails-api"
 
 group :production do
   gem "rails_12factor"

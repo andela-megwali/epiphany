@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :item do
-    bucketlist nil
-    title "MyString"
+    bucketlist_id { create(:bucketlist).id }
+    name "MyItems"
     complete false
   end
 end

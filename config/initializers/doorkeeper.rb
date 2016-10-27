@@ -7,7 +7,7 @@ Doorkeeper.configure do
     # Put your resource owner authentication logic here.
     # Example implementation:
     session[:return_route] = request.fullpath
-    User.find_by(id: session[:user_id]) || redirect_to(login_path)
+    User.find_by(id: session[:user_id]) || redirect_to(auth_login_path)
   end
   access_token_generator "Doorkeeper::JWT"
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
